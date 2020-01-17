@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.6)
+add_definitions("-g -Wall --std=c++11")
+include_directories(./src ./inc)
+add_subdirectory(./src)
+aux_source_directory(./ MAIN)
+add_executable(skill ${MAIN})
+target_link_libraries(skill test_zoo -lzookeeper_mt -lpthread )
